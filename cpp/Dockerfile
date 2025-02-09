@@ -1,5 +1,5 @@
 FROM gcc:latest
 WORKDIR /app
 COPY soluc.cpp .
-RUN g++ prime_sum.cpp -o prime_sum
+RUN g++ soluc.cpp -o soluc
 CMD ["./soluc"]
