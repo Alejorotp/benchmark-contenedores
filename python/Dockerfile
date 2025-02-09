@@ -1,5 +1,5 @@
 FROM python:3.9
 WORKDIR /app
-COPY main.py .
+COPY soluc.py .
 RUN pip install sympy
-CMD ["python", "main.py"]
+CMD ["python", "soluc.py"]
