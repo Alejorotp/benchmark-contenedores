@@ -1,13 +1,25 @@
+import numpy as np
 import time
-import sympy
 
-start_time = time.time()
+def main():
+    # Tamaño de las matrices
+    N = 1000
 
-primes = list(sympy.primerange(1, 104730))[:10000]  # Calcula los primeros 10,000 primos
-prime_sum = sum(primes)
+    # Generar dos matrices aleatorias de tamaño NxN
+    A = np.random.rand(N, N)
+    B = np.random.rand(N, N)
 
-execution_time = (time.time() - start_time) * 1000  # Tiempo en ms
+    # Iniciar temporizador
+    start_time = time.time()
 
-print(int(execution_time))  # Solo imprimir el tiempo
-with open("output.txt", "w") as f:
-    f.write(str(prime_sum))
+    # Multiplicar las matrices
+    result = np.dot(A, B)
+
+    # Finalizar temporizador
+    end_time = time.time()
+
+    # Mostrar el tiempo de ejecución
+    print(f"Tiempo de ejecución: {end_time - start_time:.4f} segundos")
+
+if __name__ == "__main__":
+    main()
