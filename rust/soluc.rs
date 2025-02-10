@@ -37,5 +37,5 @@ fn main() {
 
     // Medir tiempo de finalización
     let duration = start.elapsed();
-    println!("Tiempo de ejecución: {:?}", duration);
+    println!("Tiempo de ejecución: {:?} segundos", duration);
 }
