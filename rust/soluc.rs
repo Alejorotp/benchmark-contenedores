@@ -7,7 +7,7 @@ fn simple_random(seed: &mut u64) -> f64 {
 }
 
 fn main() {
-    const N: usize = 1000; // Tamaño de la matriz ajustado para Programiz
+    const N: usize = 10; // Tamaño de la matriz ajustado para Programiz
     let mut seed = 123456789; // Semilla para el generador aleatorio
 
     // Inicializar matrices

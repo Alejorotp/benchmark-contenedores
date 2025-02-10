@@ -10,10 +10,10 @@ RUN apk add --no-cache curl && \
 WORKDIR /app
 
 # Copia el código fuente al contenedor
-COPY benchmark.kt /app/benchmark.kt
+COPY soluc.kt /app/soluc.kt
 
 # Compila el código
-RUN bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && kotlinc benchmark.kt -include-runtime -d benchmark.jar"
+RUN bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && kotlinc soluc.kt -include-runtime -d soluc.jar"
 
 # Ejecuta el benchmark
-CMD ["java", "-jar", "benchmark.jar"]
+CMD ["java", "-jar", "soluc.jar"]
