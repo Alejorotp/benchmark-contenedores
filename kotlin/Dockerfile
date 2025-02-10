@@ -1,19 +1,14 @@
-# Usa la imagen oficial de OpenJDK
-FROM openjdk:17-alpine
-
-# Instala Kotlin y su compilador
-RUN apk add --no-cache curl && \
-    curl -s https://get.sdkman.io | bash && \
-    bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && sdk install kotlin"
+# Usa la imagen oficial de Kotlin
+FROM kotlin:latest
 
 # Establece el directorio de trabajo
 WORKDIR /app
 
 # Copia el código fuente al contenedor
-COPY soluc.kt /app/soluc.kt
+COPY benchmark.kt /app/benchmark.kt
 
-# Compila el código
-RUN bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && kotlinc soluc.kt -include-runtime -d soluc.jar"
+# Compila el código fuente a un JAR ejecutable
+RUN kotlinc benchmark.kt -include-runtime -d benchmark.jar
 
-# Ejecuta el benchmark
-CMD ["java", "-jar", "soluc.jar"]
+# Comando para ejecutar el JAR
+CMD ["java", "-jar", "benchmark.jar"]
