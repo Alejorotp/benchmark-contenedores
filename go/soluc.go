@@ -7,9 +7,8 @@ import (
 )
 
 func main() {
-	const N = 1000 // Tamaño de la matriz (ajustado para velocidad en Go Playground)
+	const N = 1000
 
-	// Inicializar matrices
 	A := make([][]float64, N)
 	B := make([][]float64, N)
 	result := make([][]float64, N)
@@ -22,7 +21,6 @@ func main() {
 
 	rand.Seed(time.Now().UnixNano())
 
-	// Llenar matrices A y B con valores aleatorios
 	for i := 0; i < N; i++ {
 		for j := 0; j < N; j++ {
 			A[i][j] = rand.Float64()
@@ -30,9 +28,8 @@ func main() {
 		}
 	}
 
-	start := time.Now() // Iniciar medicion de tiempo
+	start := time.Now()
 
-	// Multiplicación de matrices
 	for i := 0; i < N; i++ {
 		for j := 0; j < N; j++ {
 			for k := 0; k < N; k++ {
@@ -41,6 +38,6 @@ func main() {
 		}
 	}
 
-	elapsed := time.Since(start) // Calcular tiempo transcurrido
+	elapsed := time.Since(start)
 	fmt.Printf("Tiempo de ejecución: %s", elapsed)
 }
