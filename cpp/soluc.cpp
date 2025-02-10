@@ -36,7 +36,7 @@ int main() {
     std::clock_t end = std::clock();
     double elapsed_time = double(end - start) / CLOCKS_PER_SEC;
 
-    std::cout << "Tiempo de ejecución: " << elapsed_time << " segundos" << std::endl;
+    std::cout << "Tiempo de ejecución: " << elapsed_time << "s" << std::endl;
 
     return 0;
 }
