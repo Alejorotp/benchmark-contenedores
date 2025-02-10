@@ -5,7 +5,7 @@ FROM node:18
 WORKDIR /app
 
 # Copia el código fuente al contenedor
-COPY benchmark.js /app/benchmark.js
+COPY soluc.js /app/soluc.js
 
 # Comando para ejecutar el script
-CMD ["node", "benchmark.js"]
+CMD ["node", "soluc.js"]
