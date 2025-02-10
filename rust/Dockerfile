@@ -1,4 +1,4 @@
-FROM rust:1.55
+FROM rust:latest
 WORKDIR /app
 COPY soluc.rs .
 RUN rustc soluc.rs
