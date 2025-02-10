@@ -42,5 +42,5 @@ func main() {
 	}
 
 	elapsed := time.Since(start) // Calcular tiempo transcurrido
-	fmt.Printf("Tiempo de ejecución: %s\n", elapsed)
+	fmt.Printf("Tiempo de ejecución: %s\n segundos", elapsed)
 }
